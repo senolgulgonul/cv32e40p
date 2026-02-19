@@ -1,0 +1,29 @@
+Reading netlist file: "D:\docs\ostim\digital\gowin\cv32e40p\impl\gwsynthesis\cv32e40p.vg"
+Parsing netlist file "D:\docs\ostim\digital\gowin\cv32e40p\impl\gwsynthesis\cv32e40p.vg" completed
+Processing netlist completed
+Reading constraint file: "D:\docs\ostim\digital\gowin\cv32e40p\src\tangnano9k.cst"
+Physical Constraint parsed completed
+Running placement......
+[10%] Placement Phase 0 completed
+[20%] Placement Phase 1 completed
+[30%] Placement Phase 2 completed
+[50%] Placement Phase 3 completed
+Running routing......
+[60%] Routing Phase 0 completed
+[70%] Routing Phase 1 completed
+[80%] Routing Phase 2 completed
+[90%] Routing Phase 3 completed
+Running timing analysis......
+[95%] Timing analysis completed
+Placement and routing completed
+Bitstream generation in progress......
+Bitstream generation completed
+Running power analysis......
+[100%] Power analysis completed
+Generate file "D:\docs\ostim\digital\gowin\cv32e40p\impl\pnr\cv32e40p.power.html" completed
+Generate file "D:\docs\ostim\digital\gowin\cv32e40p\impl\pnr\cv32e40p.pin.html" completed
+Generate file "D:\docs\ostim\digital\gowin\cv32e40p\impl\pnr\cv32e40p.rpt.html" completed
+Generate file "D:\docs\ostim\digital\gowin\cv32e40p\impl\pnr\cv32e40p.rpt.txt" completed
+Generate file "D:\docs\ostim\digital\gowin\cv32e40p\impl\pnr\cv32e40p.tr.html" completed
+Thu Feb 19 23:10:26 2026
+

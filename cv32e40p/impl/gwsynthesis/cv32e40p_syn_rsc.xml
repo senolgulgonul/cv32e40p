@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="top" Register="45" Alu="8" Lut="94" T_Register="1957(45)" T_Alu="451(8)" T_Lut="7951(94)" T_MULT36X36="1(0)" T_MULTADDALU18X18="1(0)" T_Bsram="6(0)" T_Ssram="8(0)">
+ <SubModule name="u_core" T_Register="1912(0)" T_Alu="443(0)" T_Lut="7854(0)" T_MULT36X36="1(0)" T_MULTADDALU18X18="1(0)" T_Ssram="8(0)">
+  <SubModule name="core_i" T_Register="1912(0)" T_Alu="443(0)" T_Lut="7854(0)" T_MULT36X36="1(0)" T_MULTADDALU18X18="1(0)" T_Ssram="8(0)">
+   <SubModule name="sleep_unit_i" Register="1" T_Register="1(1)"/>
+   <SubModule name="if_stage_i" Register="65" Lut="32" T_Register="147(65)" T_Lut="704(32)" T_Ssram="8(0)">
+    <SubModule name="prefetch_buffer_i" Lut="17" T_Register="33(0)" T_Lut="160(17)" T_Ssram="8(0)">
+     <SubModule name="prefetch_controller_i" Register="15" Lut="118" T_Register="15(15)" T_Lut="118(118)"/>
+     <SubModule name="fifo_i" Register="7" Lut="15" Ssram="8" T_Register="7(7)" T_Lut="15(15)" T_Ssram="8(8)"/>
+     <SubModule name="instruction_obi_i" Register="11" Lut="10" T_Register="11(11)" T_Lut="10(10)"/>
+    </SubModule>
+    <SubModule name="aligner_i" Register="49" Lut="285" T_Register="49(49)" T_Lut="285(285)"/>
+    <SubModule name="compressed_decoder_i" Lut="227" T_Lut="227(227)"/>
+   </SubModule>
+   <SubModule name="id_stage_i" Register="228" Alu="124" Lut="2935" T_Register="1228(228)" T_Alu="129(124)" T_Lut="5321(2935)">
+    <SubModule name="register_file_i" Register="992" Lut="2233" T_Register="992(992)" T_Lut="2233(2233)"/>
+    <SubModule name="decoder_i" Lut="22" T_Lut="22(22)"/>
+    <SubModule name="controller_i" Register="8" Alu="5" Lut="131" T_Register="8(8)" T_Alu="5(5)" T_Lut="131(131)"/>
+   </SubModule>
+   <SubModule name="ex_stage_i" Register="6" Lut="3" T_Register="117(6)" T_Alu="282(0)" T_Lut="710(3)" T_MULT36X36="1(0)" T_MULTADDALU18X18="1(0)">
+    <SubModule name="alu_i" Alu="129" Lut="106" T_Register="107(0)" T_Alu="250(129)" T_Lut="659(106)">
+     <SubModule name="popcnt_i" Alu="25" Lut="24" T_Alu="25(25)" T_Lut="24(24)"/>
+     <SubModule name="alu_div_i" Register="107" Alu="96" Lut="529" T_Register="107(107)" T_Alu="96(96)" T_Lut="529(529)"/>
+    </SubModule>
+    <SubModule name="mult_i" Register="4" Alu="32" Lut="48" MULT36X36="1" MULTADDALU18X18="1" T_Register="4(4)" T_Alu="32(32)" T_Lut="48(48)" T_MULT36X36="1(1)" T_MULTADDALU18X18="1(1)"/>
+   </SubModule>
+   <SubModule name="load_store_unit_i" Register="40" Alu="32" Lut="316" T_Register="40(40)" T_Alu="32(32)" T_Lut="316(316)"/>
+   <SubModule name="cs_registers_i" Register="379" Lut="803" T_Register="379(379)" T_Lut="803(803)"/>
+  </SubModule>
+ </SubModule>
+ <SubModule name="u_imem" Lut="3" Bsram="2" T_Lut="3(3)" T_Bsram="2(2)"/>
+ <SubModule name="u_dmem" Bsram="4" T_Bsram="4(4)"/>
+</Module>

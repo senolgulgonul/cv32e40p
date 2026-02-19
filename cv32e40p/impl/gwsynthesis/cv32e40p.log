@@ -1,0 +1,102 @@
+GowinSynthesis start
+Running parser ...
+Analyzing Verilog file 'D:\docs\ostim\digital\gowin\cv32e40p\src\dmem.v'
+Analyzing Verilog file 'D:\docs\ostim\digital\gowin\cv32e40p\src\imem.v'
+Analyzing Verilog file 'D:\docs\ostim\digital\gowin\cv32e40p\src\top.v'
+Analyzing Verilog file 'D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v'
+Compiling module 'top'("D:\docs\ostim\digital\gowin\cv32e40p\src\top.v":9)
+Compiling module 'cv32e40p_top(NUM_MHPMCOUNTERS=0)'("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":1)
+Compiling module 'cv32e40p_core(NUM_MHPMCOUNTERS=0)'("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":170)
+Compiling module 'cv32e40p_sleep_unit'("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":9772)
+Compiling module 'cv32e40p_clock_gate'("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":9848)
+Compiling module 'cv32e40p_if_stage'("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":933)
+WARN  (EX3780) : Using initial value of '_sv2v_0' since it is never assigned("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":1186)
+Compiling module 'cv32e40p_prefetch_buffer(COREV_PULP=0)'("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":8954)
+Compiling module 'cv32e40p_prefetch_controller(COREV_PULP=0,DEPTH=2)'("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":9079)
+WARN  (EX3780) : Using initial value of '_sv2v_0' since it is never assigned("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":9262)
+Compiling module 'cv32e40p_fifo(DEPTH=2)'("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":9957)
+WARN  (EX3780) : Using initial value of '_sv2v_0' since it is never assigned("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":10075)
+WARN  (EX3791) : Expression size 2 truncated to fit in target size 1("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":10024)
+WARN  (EX3791) : Expression size 3 truncated to fit in target size 2("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":10025)
+WARN  (EX3791) : Expression size 2 truncated to fit in target size 1("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":10031)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 2("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":10032)
+WARN  (EX3791) : Expression size 2 truncated to fit in target size 1("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":10061)
+WARN  (EX3826) : Synthesis - simulation differences may occur when using parallel_case directive("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":10053)
+Compiling module 'cv32e40p_obi_interface'("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":9264)
+WARN  (EX3780) : Using initial value of '_sv2v_0' since it is never assigned("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":9406)
+Compiling module 'cv32e40p_aligner'("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":9408)
+WARN  (EX3780) : Using initial value of '_sv2v_0' since it is never assigned("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":9548)
+Compiling module 'cv32e40p_compressed_decoder'("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":10077)
+WARN  (EX3780) : Using initial value of '_sv2v_0' since it is never assigned("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":10248)
+Compiling module 'cv32e40p_id_stage(COREV_PULP=0)'("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":1188)
+WARN  (EX3780) : Using initial value of '_sv2v_0' since it is never assigned("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":2604)
+Compiling module 'cv32e40p_register_file(ADDR_WIDTH=6)'("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":9860)
+Compiling module 'cv32e40p_decoder(COREV_PULP=0)'("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":4039)
+WARN  (EX3780) : Using initial value of '_sv2v_0' since it is never assigned("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":6449)
+Compiling module 'cv32e40p_controller'("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":6451)
+WARN  (EX3780) : Using initial value of '_sv2v_0' since it is never assigned("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":7538)
+WARN  (EX3826) : Synthesis - simulation differences may occur when using parallel_case directive("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":6911)
+WARN  (EX3826) : Synthesis - simulation differences may occur when using parallel_case directive("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":6995)
+WARN  (EX3826) : Synthesis - simulation differences may occur when using parallel_case directive("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":7145)
+WARN  (EX3826) : Synthesis - simulation differences may occur when using parallel_case directive("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":7229)
+WARN  (EX3826) : Synthesis - simulation differences may occur when using parallel_case directive("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":7282)
+Compiling module 'cv32e40p_int_controller'("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":9550)
+WARN  (EX3780) : Using initial value of '_sv2v_0' since it is never assigned("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":9680)
+Compiling module 'cv32e40p_ex_stage'("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":2606)
+WARN  (EX3780) : Using initial value of '_sv2v_0' since it is never assigned("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":3005)
+Compiling module 'cv32e40p_alu'("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":3007)
+WARN  (EX3780) : Using initial value of '_sv2v_0' since it is never assigned("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":3662)
+WARN  (EX3791) : Expression size 17 truncated to fit in target size 16("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":3176)
+WARN  (EX3791) : Expression size 17 truncated to fit in target size 16("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":3177)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":3180)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":3181)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":3182)
+WARN  (EX3791) : Expression size 9 truncated to fit in target size 8("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":3183)
+WARN  (EX3791) : Expression size 64 truncated to fit in target size 32("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":3185)
+Compiling module 'cv32e40p_popcnt'("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":9682)
+Compiling module 'cv32e40p_ff_one'("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":9716)
+Compiling module 'cv32e40p_alu_div'("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":3664)
+WARN  (EX3780) : Using initial value of '_sv2v_0' since it is never assigned("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":3803)
+WARN  (EX3791) : Expression size 32 truncated to fit in target size 6("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":3737)
+Compiling module 'cv32e40p_mult'("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":3805)
+WARN  (EX3780) : Using initial value of '_sv2v_0' since it is never assigned("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":4037)
+WARN  (EX3791) : Expression size 17 truncated to fit in target size 16("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":4009)
+Compiling module 'cv32e40p_load_store_unit'("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":8611)
+WARN  (EX3780) : Using initial value of '_sv2v_0' since it is never assigned("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":8952)
+Compiling module 'cv32e40p_obi_interface(TRANS_STABLE=1)'("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":9264)
+WARN  (EX3780) : Using initial value of '_sv2v_0' since it is never assigned("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":9406)
+Compiling module 'cv32e40p_cs_registers(NUM_MHPMCOUNTERS=0)'("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":7540)
+WARN  (EX3780) : Using initial value of '_sv2v_0' since it is never assigned("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":8609)
+WARN  (EX3826) : Synthesis - simulation differences may occur when using parallel_case directive("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":8256)
+WARN  (EX3826) : Synthesis - simulation differences may occur when using parallel_case directive("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":8253)
+Compiling module 'imem'("D:\docs\ostim\digital\gowin\cv32e40p\src\imem.v":8)
+Extracting RAM for identifier 'mem'("D:\docs\ostim\digital\gowin\cv32e40p\src\imem.v":16)
+Compiling module 'dmem'("D:\docs\ostim\digital\gowin\cv32e40p\src\dmem.v":6)
+Extracting RAM for identifier 'mem0'("D:\docs\ostim\digital\gowin\cv32e40p\src\dmem.v":15)
+Extracting RAM for identifier 'mem1'("D:\docs\ostim\digital\gowin\cv32e40p\src\dmem.v":16)
+Extracting RAM for identifier 'mem2'("D:\docs\ostim\digital\gowin\cv32e40p\src\dmem.v":17)
+Extracting RAM for identifier 'mem3'("D:\docs\ostim\digital\gowin\cv32e40p\src\dmem.v":18)
+NOTE  (EX0101) : Current top module is "top"
+[5%] Running netlist conversion ...
+Running device independent optimization ...
+[10%] Optimizing Phase 0 completed
+[15%] Optimizing Phase 1 completed
+[25%] Optimizing Phase 2 completed
+Running inference ...
+[30%] Inferring Phase 0 completed
+[40%] Inferring Phase 1 completed
+[50%] Inferring Phase 2 completed
+[55%] Inferring Phase 3 completed
+Running technical mapping ...
+[60%] Tech-Mapping Phase 0 completed
+[65%] Tech-Mapping Phase 1 completed
+[75%] Tech-Mapping Phase 2 completed
+[80%] Tech-Mapping Phase 3 completed
+[90%] Tech-Mapping Phase 4 completed
+WARN  (NL0002) : The module "cv32e40p_ff_one" instantiated to "ff_one_i" is swept in optimizing("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":3532)
+WARN  (NL0002) : The module "cv32e40p_int_controller" instantiated to "int_controller_i" is swept in optimizing("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":2335)
+WARN  (NL0002) : The module "cv32e40p_obi_interface" instantiated to "data_obi_i" is swept in optimizing("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":8951)
+WARN  (NL0002) : The module "cv32e40p_clock_gate" instantiated to "core_clock_gate_i" is swept in optimizing("D:\docs\ostim\digital\gowin\cv32e40p\src\cv32e40p_merged.v":9846)
+[95%] Generate netlist file "D:\docs\ostim\digital\gowin\cv32e40p\impl\gwsynthesis\cv32e40p.vg" completed
+[100%] Generate report file "D:\docs\ostim\digital\gowin\cv32e40p\impl\gwsynthesis\cv32e40p_syn.rpt.html" completed
+GowinSynthesis finish
