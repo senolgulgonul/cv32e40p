@@ -1,0 +1,61 @@
+// imem.hex — program for CV32E40P bare-metal test
+// Format: one 32-bit word per line, hex, MSB first
+// $readmemh loads word[0] first → address 0x000
+
+// --- NOP fill (words 0–63, addresses 0x000–0x0FC) ---
+// We only define non-NOP words; rest default to 0 (treated as NOP: addi x0,x0,0)
+
+@00000000
+// _start
+00012137  // lui x2, 0x12          sp = 0x12000
+FFC10113  // addi x2,x2,-4         sp = 0x1_1FFC
+00000597  // auipc x11,0           x11 = 0x8
+0F858593  // addi x11,x11,0xF8     x11 = 0x100 (string)
+04C000EF  // jal x1, +0x4C         call uart_puts @ 0x05C
+00100313  // addi x6,x0,1          LED pattern = 1
+200002B7  // lui x5, 0x20000       x5 = 0x2000_0000
+
+// main loop @ 0x01C
+00628023  // sw x6,0(x5)           write LED
+000F43B7  // lui x7,0xF4
+24038393  // addi x7,x7,0x240      x7 = 1_000_000
+FFF38393  // addi x7,x7,-1         delay loop...
+FE039CE3  // bne x7,x0,-8
+00131413  // slli x8,x6,1
+00535493  // srli x9,x6,5
+0094E333  // or x6,x8,x9
+03F37313  // andi x6,x6,63
+FE0006E3  // beq x0,x0,-0x24       jump to main loop
+
+// pad to uart_putc @ 0x044
+00000013  // nop
+
+// uart_putc @ 0x044 (word 17)
+200002B7  // lui x5,0x20000
+0042A403  // lw x8,4(x5)           read UART busy
+00147413  // andi x8,x8,1
+FE841CE3  // bne x8,x0,-8          poll busy
+00A2A223  // sw x10,4(x5)          write char
+00008067  // ret
+
+// uart_puts @ 0x05C (word 23)
+FF810113  // addi x2,x2,-8
+00112223  // sw x1,4(x2)
+00812023  // sw x8,0(x2)
+00058413  // addi x8,x11,0
+00044503  // lbu x10,0(x8)
+02050863  // beq x10,x0,+0x20      exit if null
+FD1FF0EF  // jal x1,-0x30          call uart_putc
+00140413  // addi x8,x8,1
+FF1FF06F  // jal x0,-0x10          loop
+00412083  // lw x1,4(x2)
+00012403  // lw x8,0(x2)
+00810113  // addi x2,x2,8
+00008067  // ret
+
+// pad to string @ 0x100 (word 64 = @40 in hex)
+@00000040
+6C6C6548  // "Hell"
+43202C6F  // "o, C"
+21323356  // "V32!"
+00000A0D  // "\r\n\0\0"
