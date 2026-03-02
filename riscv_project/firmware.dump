@@ -1,0 +1,170 @@
+
+firmware.elf:     file format elf32-littleriscv
+
+
+Disassembly of section .text.start:
+
+00000000 <_start>:
+   0:	00011137          	lui	sp,0x11
+   4:	1171                	addi	sp,sp,-4 # 10ffc <__bss_end+0xffc>
+   6:	00010517          	auipc	a0,0x10
+   a:	ffa50513          	addi	a0,a0,-6 # 10000 <__bss_end>
+   e:	00010597          	auipc	a1,0x10
+  12:	ff258593          	addi	a1,a1,-14 # 10000 <__bss_end>
+
+00000016 <bss_loop>:
+  16:	00b55663          	bge	a0,a1,22 <bss_done>
+  1a:	00052023          	sw	zero,0(a0)
+  1e:	0511                	addi	a0,a0,4
+  20:	bfdd                	j	16 <bss_loop>
+
+00000022 <bss_done>:
+  22:	2a39                	jal	140 <main>
+
+00000024 <halt>:
+  24:	a001                	j	24 <halt>
+
+Disassembly of section .text.trap:
+
+00000100 <_trap_handler>:
+ 100:	a001                	j	100 <_trap_handler>
+
+Disassembly of section .text:
+
+00000104 <uart_putc>:
+ 104:	200007b7          	lui	a5,0x20000
+ 108:	1141                	addi	sp,sp,-16
+ 10a:	c3c8                	sw	a0,4(a5)
+ 10c:	c602                	sw	zero,12(sp)
+ 10e:	7cf00713          	li	a4,1999
+ 112:	47b2                	lw	a5,12(sp)
+ 114:	00f75463          	bge	a4,a5,11c <uart_putc+0x18>
+ 118:	0141                	addi	sp,sp,16
+ 11a:	8082                	ret
+ 11c:	47b2                	lw	a5,12(sp)
+ 11e:	0785                	addi	a5,a5,1 # 20000001 <__bss_end+0x1fff0001>
+ 120:	c63e                	sw	a5,12(sp)
+ 122:	bfc5                	j	112 <uart_putc+0xe>
+
+00000124 <uart_puts>:
+ 124:	1141                	addi	sp,sp,-16
+ 126:	c422                	sw	s0,8(sp)
+ 128:	c606                	sw	ra,12(sp)
+ 12a:	842a                	mv	s0,a0
+ 12c:	00044503          	lbu	a0,0(s0)
+ 130:	e509                	bnez	a0,13a <uart_puts+0x16>
+ 132:	40b2                	lw	ra,12(sp)
+ 134:	4422                	lw	s0,8(sp)
+ 136:	0141                	addi	sp,sp,16
+ 138:	8082                	ret
+ 13a:	0405                	addi	s0,s0,1
+ 13c:	37e1                	jal	104 <uart_putc>
+ 13e:	b7fd                	j	12c <uart_puts+0x8>
+
+00000140 <main>:
+ 140:	7139                	addi	sp,sp,-64
+ 142:	1e800513          	li	a0,488
+ 146:	de06                	sw	ra,60(sp)
+ 148:	dc22                	sw	s0,56(sp)
+ 14a:	d84a                	sw	s2,48(sp)
+ 14c:	d64e                	sw	s3,44(sp)
+ 14e:	d452                	sw	s4,40(sp)
+ 150:	d256                	sw	s5,36(sp)
+ 152:	ce5e                	sw	s7,28(sp)
+ 154:	cc62                	sw	s8,24(sp)
+ 156:	da26                	sw	s1,52(sp)
+ 158:	d05a                	sw	s6,32(sp)
+ 15a:	37e9                	jal	124 <uart_puts>
+ 15c:	20400513          	li	a0,516
+ 160:	37d1                	jal	124 <uart_puts>
+ 162:	21c00513          	li	a0,540
+ 166:	3f7d                	jal	124 <uart_puts>
+ 168:	23c00b93          	li	s7,572
+ 16c:	0014a9b7          	lui	s3,0x14a
+ 170:	4901                	li	s2,0
+ 172:	4405                	li	s0,1
+ 174:	20000ab7          	lui	s5,0x20000
+ 178:	4a29                	li	s4,10
+ 17a:	24400c13          	li	s8,580
+ 17e:	96f98993          	addi	s3,s3,-1681 # 14996f <__bss_end+0x13996f>
+ 182:	008aa023          	sw	s0,0(s5) # 20000000 <__bss_end+0x1fff0000>
+ 186:	855e                	mv	a0,s7
+ 188:	3f71                	jal	124 <uart_puts>
+ 18a:	02091363          	bnez	s2,1b0 <main+0x70>
+ 18e:	03000513          	li	a0,48
+ 192:	3f8d                	jal	104 <uart_putc>
+ 194:	8562                	mv	a0,s8
+ 196:	3779                	jal	124 <uart_puts>
+ 198:	00141793          	slli	a5,s0,0x1
+ 19c:	8015                	srli	s0,s0,0x5
+ 19e:	8c5d                	or	s0,s0,a5
+ 1a0:	03f47413          	andi	s0,s0,63
+ 1a4:	c002                	sw	zero,0(sp)
+ 1a6:	4782                	lw	a5,0(sp)
+ 1a8:	02f9db63          	bge	s3,a5,1de <main+0x9e>
+ 1ac:	0905                	addi	s2,s2,1
+ 1ae:	bfd1                	j	182 <main+0x42>
+ 1b0:	0058                	addi	a4,sp,4
+ 1b2:	87ca                	mv	a5,s2
+ 1b4:	4481                	li	s1,0
+ 1b6:	8b3a                	mv	s6,a4
+ 1b8:	0347e6b3          	rem	a3,a5,s4
+ 1bc:	0485                	addi	s1,s1,1
+ 1be:	0705                	addi	a4,a4,1
+ 1c0:	0347c7b3          	div	a5,a5,s4
+ 1c4:	03068693          	addi	a3,a3,48
+ 1c8:	fed70fa3          	sb	a3,-1(a4)
+ 1cc:	f7f5                	bnez	a5,1b8 <main+0x78>
+ 1ce:	14fd                	addi	s1,s1,-1
+ 1d0:	009b07b3          	add	a5,s6,s1
+ 1d4:	0007c503          	lbu	a0,0(a5)
+ 1d8:	3735                	jal	104 <uart_putc>
+ 1da:	f8f5                	bnez	s1,1ce <main+0x8e>
+ 1dc:	bf65                	j	194 <main+0x54>
+ 1de:	4782                	lw	a5,0(sp)
+ 1e0:	0785                	addi	a5,a5,1
+ 1e2:	c03e                	sw	a5,0(sp)
+ 1e4:	b7c9                	j	1a6 <main+0x66>
+ 1e6:	0000                	unimp
+ 1e8:	32335643          	.insn	4, 0x32335643
+ 1ec:	3445                	jal	fffffc8c <__bss_end+0xfffefc8c>
+ 1ee:	5030                	lw	a2,96(s0)
+ 1f0:	6f20                	.insn	2, 0x6f20
+ 1f2:	206e                	.insn	2, 0x206e
+ 1f4:	6154                	.insn	2, 0x6154
+ 1f6:	676e                	.insn	2, 0x676e
+ 1f8:	4e20                	lw	s0,88(a2)
+ 1fa:	6e61                	lui	t3,0x18
+ 1fc:	4b39206f          	j	92eae <__bss_end+0x82eae>
+ 200:	0a0d                	addi	s4,s4,3
+ 202:	0000                	unimp
+ 204:	4952                	lw	s2,20(sp)
+ 206:	562d4353          	.insn	4, 0x562d4353
+ 20a:	6920                	.insn	2, 0x6920
+ 20c:	75722073          	.insn	4, 0x75722073
+ 210:	6e6e                	.insn	2, 0x6e6e
+ 212:	6e69                	lui	t3,0x1a
+ 214:	0a0d2167          	.insn	4, 0x0a0d2167
+ 218:	0000                	unimp
+ 21a:	0000                	unimp
+ 21c:	2d2d                	jal	856 <main+0x716>
+ 21e:	2d2d                	jal	858 <main+0x718>
+ 220:	2d2d                	jal	85a <main+0x71a>
+ 222:	2d2d                	jal	85c <main+0x71c>
+ 224:	2d2d                	jal	85e <main+0x71e>
+ 226:	2d2d                	jal	860 <main+0x720>
+ 228:	2d2d                	jal	862 <main+0x722>
+ 22a:	2d2d                	jal	864 <main+0x724>
+ 22c:	2d2d                	jal	866 <main+0x726>
+ 22e:	2d2d                	jal	868 <main+0x728>
+ 230:	2d2d                	jal	86a <main+0x72a>
+ 232:	2d2d                	jal	86c <main+0x72c>
+ 234:	2d2d                	jal	86e <main+0x72e>
+ 236:	0a0d                	addi	s4,s4,3
+ 238:	0000                	unimp
+ 23a:	0000                	unimp
+ 23c:	6e756f43          	.insn	4, 0x6e756f43
+ 240:	3a74                	.insn	2, 0x3a74
+ 242:	0020                	addi	s0,sp,8
+ 244:	0a0d                	addi	s4,s4,3
+	...
